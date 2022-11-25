@@ -25,6 +25,6 @@ const server = https.createServer(options, app.callback());
 usePlugin(app);
 useRouter(app);
 
-server.listen('60000', () => {
-  console.log('server is runing at 10240');
+server.listen(7552, () => {
+  console.log('server is runing at 7552');
 });
