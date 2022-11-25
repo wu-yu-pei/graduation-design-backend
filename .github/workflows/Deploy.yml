@@ -26,7 +26,7 @@ jobs:
       - name: install
         run: |
           node -v
-          pnpm -v
+          npm install -g pnpm
           pnpm install
 
       # copy
