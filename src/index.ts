@@ -1,9 +1,5 @@
 import Koa from 'koa';
 
-import https from 'https';
-import fs from 'fs';
-import path from 'path';
-
 // database
 import './config/database';
 
