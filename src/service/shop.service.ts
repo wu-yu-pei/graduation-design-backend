@@ -10,6 +10,15 @@ class ShopService {
 
     return res;
   }
+
+  async createShop(shopInfo: any) {
+    const res: any = await ShopModel.create({
+      ...shopInfo,
+      time: +new Date(),
+    });
+
+    return res.dataValues;
+  }
 }
 
 export default new ShopService();

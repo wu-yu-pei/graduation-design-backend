@@ -7,8 +7,8 @@ const Shop = sequelize.define(
     id: {
       // 商品id
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
     },
     uid: {
       // 此商品的 发货着 id
@@ -23,12 +23,12 @@ const Shop = sequelize.define(
     current_time: {
       // 商品什么时间 到达的当前地址
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     current_position: {
       // 商品当前地址
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     start_position: {
       // 商品 发货地址
@@ -44,7 +44,7 @@ const Shop = sequelize.define(
     current_position_geo: {
       // 商品当前经纬度
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     start_position_geo: {
       // 商品 发货时的经纬度

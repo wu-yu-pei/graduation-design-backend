@@ -10,7 +10,7 @@ class LoginService {
     });
 
     if (res) {
-      const token = genToken({ account, password });
+      const token = genToken({ account, password, id: res.id });
       return Object.assign({}, res.dataValues, { msg: '登录成功', code: 200, token, password: '' });
     }
 
