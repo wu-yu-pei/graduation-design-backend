@@ -25,7 +25,7 @@ const User = sequelize.define(
     time: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
+    }
   },
   {
     createdAt: false,

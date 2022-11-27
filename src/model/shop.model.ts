@@ -61,6 +61,15 @@ const Shop = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    qr_code: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    status: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0, // 0已送达 1 未送达
+    },
   },
   {
     createdAt: false,
