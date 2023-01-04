@@ -40,7 +40,6 @@ const Shop = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-
     current_position_geo: {
       // 商品当前经纬度
       type: DataTypes.STRING,
@@ -62,7 +61,7 @@ const Shop = sequelize.define(
       allowNull: false,
     },
     qr_code: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     status: {

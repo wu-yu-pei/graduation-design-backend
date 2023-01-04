@@ -1,3 +1,4 @@
+import * as QRCode from 'qrcode';
 import ShopModel from '../model/shop.model';
 
 class ShopService {
@@ -17,7 +18,26 @@ class ShopService {
       time: +new Date(),
     });
 
-    return res.dataValues;
+    let qr_code = await QRCode.toDataURL(String(res.dataValues.id));
+
+    try {
+      await ShopModel.update(
+        { qr_code: qr_code },
+        {
+          where: { id: String(res.dataValues.id) },
+        }
+      );
+    } catch (error) {
+      return error;
+    }
+
+    const finalRes = await ShopModel.findOne({
+      where: {
+        id: res.dataValues.id,
+      },
+    });
+
+    return finalRes;
   }
 }
 

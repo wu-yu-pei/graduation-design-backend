@@ -35,9 +35,6 @@ class ShopController {
 
       // token有效
       if (res) {
-        console.log(res);
-        console.log({ ...ctx.request.body, uid: res.id });
-
         const resulte = await shopService.createShop({ ...ctx.request.body, uid: res.id });
         ctx.body = resulte;
       }
